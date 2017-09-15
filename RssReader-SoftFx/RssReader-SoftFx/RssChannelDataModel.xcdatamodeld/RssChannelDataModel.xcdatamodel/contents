@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="Item" representedClassName="Item" syncable="YES">
+        <attribute name="newsText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pubDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titel" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="rssChannel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RssChannel" inverseName="rssItems" inverseEntity="RssChannel" syncable="YES"/>
+    </entity>
+    <entity name="RssChannel" representedClassName="RssChannel" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="rssItems" optional="YES" toMany="YES" maxCount="100" deletionRule="Cascade" destinationEntity="Item" inverseName="rssChannel" inverseEntity="Item" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Item" positionX="-9" positionY="36" width="128" height="103"/>
+        <element name="RssChannel" positionX="-261" positionY="15" width="128" height="73"/>
+    </elements>
+</model>
